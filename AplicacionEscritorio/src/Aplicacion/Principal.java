@@ -13,15 +13,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
-import javax.swing.event.MenuListener;
-import javax.swing.event.MenuEvent;
-import java.awt.event.MouseMotionAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseAdapter;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 public class Principal extends JFrame {
 
@@ -33,6 +26,9 @@ public class Principal extends JFrame {
 	private JMenuItem mntmLogout;
 	private JMenuItem mntmExit;
 	private Login login;
+	private JMenuItem mntmBorrar;
+	private JMenuItem mntmActualizar;
+	private JMenuItem mntmInsertar;
 
 	/**
 	 * Launch the application.
@@ -58,8 +54,12 @@ public class Principal extends JFrame {
 			@Override
 			public void focusGained(FocusEvent e) {
 				if(login != null)
-					if(login.conexion())
+					if(login.conexion()){
 						mnFunciones.setEnabled(true);
+						mntmInsertar.setEnabled(false);
+						mntmBorrar.setEnabled(false);
+						mntmActualizar.setEnabled(false);
+					}
 			}
 		});
 		setTitle("Organiza tus clases");
@@ -77,7 +77,6 @@ public class Principal extends JFrame {
 					if(login.conexion() == true){
 						mntmLogin.setEnabled(false);
 						mntmLogout.setEnabled(true);
-						mnFunciones.setEnabled(true);
 					}
 				}
 			}
@@ -120,13 +119,13 @@ public class Principal extends JFrame {
 		mnFunciones.setEnabled(false);
 		menuBar.add(mnFunciones);
 		
-		JMenuItem mntmInsertar = new JMenuItem("Insertar");
+		mntmInsertar = new JMenuItem("Insertar");
 		mnFunciones.add(mntmInsertar);
 		
-		JMenuItem mntmActualizar = new JMenuItem("Actualizar");
+		mntmActualizar = new JMenuItem("Actualizar");
 		mnFunciones.add(mntmActualizar);
 		
-		JMenuItem mntmBorrar = new JMenuItem("Borrar");
+		mntmBorrar = new JMenuItem("Borrar");
 		mnFunciones.add(mntmBorrar);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -158,5 +157,14 @@ public class Principal extends JFrame {
 	}
 	public JMenuItem getMntmExit() {
 		return mntmExit;
+	}
+	public JMenuItem getMntmBorrar() {
+		return mntmBorrar;
+	}
+	public JMenuItem getMntmActualizar() {
+		return mntmActualizar;
+	}
+	public JMenuItem getMntmInsertar() {
+		return mntmInsertar;
 	}
 }
