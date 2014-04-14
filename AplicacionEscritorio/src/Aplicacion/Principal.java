@@ -1,6 +1,5 @@
 package Aplicacion;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,10 +14,6 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.UIManager;
 import java.awt.Color;
 
 public class Principal extends JFrame {

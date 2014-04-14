@@ -95,7 +95,7 @@ public class Login extends JFrame {
 							dispose();
 						}
 						else
-							JOptionPane.showMessageDialog(contentPane, "Datos incorrectos");
+							JOptionPane.showMessageDialog(contentPane, "Datos incorrectos", "Login incorrecto", JOptionPane.INFORMATION_MESSAGE);
 					} catch (SQLException e1) {
 						JOptionPane.showMessageDialog(contentPane, e1.getMessage());
 					}
