@@ -1,6 +1,5 @@
 package Aplicacion;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -110,3 +109,4 @@ public class Sesiones extends JFrame {
 		contentPane.add(btnNewButton_1);
 	}
 }
+
