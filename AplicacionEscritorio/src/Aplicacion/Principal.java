@@ -30,10 +30,12 @@ public class Principal extends JFrame {
 	private JMenuItem mntmLogin;
 	private JMenuItem mntmLogout;
 	private JMenuItem mntmExit;
-	private Login login;
 	private JMenuItem mntmBorrar;
 	private JMenuItem mntmActualizar;
 	private JMenuItem mntmInsertar;
+	
+	private Login login;
+	private Sesiones sesion;
 
 	/**
 	 * Launch the application.
@@ -126,6 +128,12 @@ public class Principal extends JFrame {
 		menuBar.add(mnFunciones);
 		
 		mntmInsertar = new JMenuItem("Insertar");
+		mntmInsertar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				sesion = new Sesiones();
+				sesion.setVisible(true);
+			}
+		});
 		mnFunciones.add(mntmInsertar);
 		
 		mntmActualizar = new JMenuItem("Actualizar");
