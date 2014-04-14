@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
+import javax.swing.ImageIcon;
 
 public class Login extends JFrame {
 
@@ -57,7 +58,7 @@ public class Login extends JFrame {
 		contentPane.add(txtPassword);
 		
 		txtUser = new JTextField();
-		txtUser.setBounds(162, 20, 156, 27);
+		txtUser.setBounds(159, 20, 159, 27);
 		contentPane.add(txtUser);
 		txtUser.setColumns(10);
 		
@@ -70,6 +71,7 @@ public class Login extends JFrame {
 		contentPane.add(lblPassword);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.setIcon(new ImageIcon(Login.class.getResource("/imagenes/OK.png")));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				loginCorecto = false;
@@ -109,16 +111,17 @@ public class Login extends JFrame {
 				}
 			}
 		});
-		btnLogin.setBounds(60, 124, 89, 23);
+		btnLogin.setBounds(30, 125, 125, 30);
 		contentPane.add(btnLogin);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setIcon(new ImageIcon(Login.class.getResource("/imagenes/Close.png")));
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		btnCancelar.setBounds(211, 124, 89, 23);
+		btnCancelar.setBounds(180, 125, 125, 30);
 		contentPane.add(btnCancelar);
 	}
 

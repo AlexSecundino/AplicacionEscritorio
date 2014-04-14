@@ -15,6 +15,11 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class Principal extends JFrame {
 
@@ -50,6 +55,7 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setBackground(Color.WHITE);
 		addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
@@ -64,7 +70,7 @@ public class Principal extends JFrame {
 		});
 		setTitle("Organiza tus clases");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 469, 332);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -128,9 +134,10 @@ public class Principal extends JFrame {
 		mntmBorrar = new JMenuItem("Borrar");
 		mnFunciones.add(mntmBorrar);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
 		if(login != null){
 			if(login.conexion())
